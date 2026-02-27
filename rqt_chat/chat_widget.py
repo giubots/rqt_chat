@@ -97,8 +97,8 @@ class ChatWidget(QWidget):
         self.intents_sub = self._node.create_subscription(
             Intent, "/intents",
             self.on_intent, 1)
-        self._action_server = ActionServer(
-            self._node, TTS, '/tts_engine/tts', self._say_cb)
+        # self._action_server = ActionServer(
+        #     self._node, TTS, '/tts_engine/tts', self._say_cb)
 
         self.update_thread = threading.Thread(target=self.update_msg_list)
         self.update_thread.start()
